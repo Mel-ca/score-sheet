@@ -35,8 +35,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/Mel-ca/score-sheet)
-- Live Site URL: [Add live site URL here](https://mel-ca.github.io/score-sheet/)
+- Solution URL:https://github.com/Mel-ca/score-sheet)
+- Live Site URL:https://mel-ca.github.io/score-sheet/)
 
 ## My process
 
