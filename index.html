@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Score-sheet</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f7f2f2;
+      border-radius: 40px;
+    }
+
+    .left-column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 20%;
+      padding: 20px;
+      background-color: hsla(256, 72%, 46%, 1);
+      color: white;
+      border-radius: 20px;
+    }
+
+    .left-column h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .average-rating {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .circle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(87, 67, 197);
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      font-size: 36px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .average-rating h3 {
+      font-size: 24px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .average-rating p {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    .right-column {
+      width: 20%;
+      padding: 20px;
+      background-color: white;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+      
+    }
+
+    .right-column h4 {
+        font-size: 24px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      font-weight: lighter;
+       
+      }
+      
+
+      .right-column button[type="submit"] {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: rgb(46, 43, 43);
+        color: white;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        
+      }
+      .right-column .score {
+        float: left;
+      }
+
+    .rating {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+      margin-bottom: 10px;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .rating:nth-child(1) {
+      background-color: #FF8989;
+    }
+
+    .rating:nth-child(2) {
+      background-color: #FFC689;
+    }
+
+    .rating:nth-child(3) {
+      background-color: #AAFF89;
+    }
+
+    .rating:nth-child(4) {
+      background-color: #89E4FF;
+    }
+
+    .score {
+      background-color: white;
+      color: #333;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 40px;
+      height: 40px;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+
+    .score.reaction {
+      background-color: #FF8989;
+    }
+
+    .score.memory {
+      background-color: #FFC689;
+    }
+
+    .score.verbal {
+      background-color: #AAFF89;
+    }
+
+    .score.visual {
+      background-color: #89E4FF;
+    }
+
+    .attribution { font-size: 20px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left-column">
+      <h2>Your Result</h2>
+      <div class="average-rating">
+        <div class="circle">78%</div>
+        <h3>Great</h3
+        <p>You scored higher than 65% of <br>the people who have taken <br> these tests.</p>
+    </div>
+  </div>
+  <div class="right-column">
+    <h4>Summary</h4> <br>
+    <div class="rating" style="background-color: #FF8989;">Reaction 65/100</div>
+    <div class="rating" style="background-color: #FFC689;">Memory 80/100</div>
+    <div class="rating" style="background-color: #AAFF89;">Verbal 92/100</div>
+    <div class="rating" style="background-color: #89E4FF;">Visual 70/100</div> <br>
+    <button type="submit">continue</button>
+  </div>
+</div>
+
+    <script>
+      // Calculate average rating
+      const reactionRating = 65;
+      const memoryRating = 80;
+      const verbalRating = 90;
+      const visualRating = 75;
+      const totalRatings = 4;
+      const averageRating = (reactionRating + memoryRating + verbalRating + visualRating) / totalRatings;
+
+      // Update average rating in the circle
+      const averageCircle = document.getElementById('average-circle');
+      averageCircle.textContent = Math.round(averageRating);
+    </script>
+
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Melonie Langat</a>.
+    </div>
+  </body>
+</html>
